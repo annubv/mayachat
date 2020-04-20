@@ -1,0 +1,106 @@
+body {
+  font-family: sans-serif;
+}
+
+body .nav-wrapper {
+  position: fixed;
+  width: 100%;
+}
+
+body .nav-wrapper nav {
+  background-color: #350d36;
+  color: #f8f5f5;
+  height: 7vh;
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .nav-wrapper nav .sidebar {
+  background-color: #431e44;
+  width: 80%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+body .nav-wrapper nav .sidebar-active {
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-box-shadow 0.5s ease-in;
+  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-box-shadow 0.5s ease-in;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), box-shadow 0.5s ease-in;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), box-shadow 0.5s ease-in, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-box-shadow 0.5s ease-in;
+  -webkit-box-shadow: 0 0 10px #1d1c1d;
+          box-shadow: 0 0 10px #1d1c1d;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+body .nav-wrapper nav .burger {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  z-index: 2;
+}
+
+body .nav-wrapper nav .burger div {
+  width: 25px;
+  border-radius: 10px;
+  background-color: #f8f5f5;
+  height: 3px;
+  margin: 0.3rem 0;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+body .nav-wrapper nav .toggle .line1 {
+  -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+          transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+body .nav-wrapper nav .toggle .line2 {
+  opacity: 0;
+}
+
+body .nav-wrapper nav .toggle .line3 {
+  -webkit-transform: rotate(45deg) translate(-5px, -6px);
+          transform: rotate(45deg) translate(-5px, -6px);
+}
+
+body .nav-wrapper nav .nav-header p {
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+}
+
+body .nav-wrapper nav .profile-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  min-width: 25px;
+}
+/*# sourceMappingURL=main.css.map */
