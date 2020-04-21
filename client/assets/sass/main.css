@@ -125,6 +125,7 @@ body .nav-wrapper nav .nav-header p {
 }
 
 body .nav-wrapper nav .profile-options {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,11 +144,84 @@ body .nav-wrapper nav .profile-options i {
   line-height: 2.5rem;
 }
 
+body .nav-wrapper nav .profile-settings {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  overflow-x: hidden;
+  min-width: 12rem;
+  border-radius: 0.25rem;
+  background-color: #f8f5f5;
+  position: fixed;
+  right: 0.3rem;
+  top: 3.5rem;
+  -webkit-box-shadow: 0px 10px 19px -4px #868686;
+          box-shadow: 0px 10px 19px -4px #868686;
+  color: #1d1c1d;
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: -webkit-transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+body .nav-wrapper nav .profile-settings .profile-settings-option {
+  cursor: pointer;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2.8rem auto;
+      grid-template-columns: 2.8rem auto;
+  padding: 0.5rem;
+  min-width: 3.8rem;
+  -webkit-transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s ease-in;
+}
+
+body .nav-wrapper nav .profile-settings .profile-settings-option#profile-settings-header {
+  background-color: #eeeeee;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+body .nav-wrapper nav .profile-settings .profile-settings-option#profile-settings-header:hover {
+  background-color: #dfdfdf;
+}
+
+body .nav-wrapper nav .profile-settings .profile-settings-option:hover {
+  background-color: #dfdfdf;
+}
+
+body .nav-wrapper nav .profile-settings .profile-settings-option i {
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+}
+
+body .nav-wrapper nav .profile-settings .profile-settings-option p {
+  padding-left: 0.5rem;
+}
+
+body .nav-wrapper nav .profile-settings-active {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
 body .chat-content-wrapper {
   position: fixed;
   z-index: -1;
-  height: 93vh;
-  background-color: #f8f5f5;
+  width: 100%;
+  height: calc(100% - 10rem);
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: fixed;
+  bottom: 4rem;
 }
 
 body .chat-content-wrapper #chat-id {
@@ -163,6 +237,70 @@ body .chat-content-wrapper #chat-id {
   border-bottom: 1px solid #dfdfdf;
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+body .chat-content-wrapper #chat-wrapper {
+  overflow-y: scroll;
+  padding: 0 0.75rem;
+}
+
+body .chat-content-wrapper #chat-wrapper .chat-section .chat-date {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #1d1c1d;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+body .chat-content-wrapper #chat-wrapper .chat-section .chat-content {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3.5rem auto;
+      grid-template-columns: 3.5rem auto;
+  padding: 0.3rem 0;
+}
+
+body .chat-content-wrapper #chat-wrapper .chat-section .chat-content .user-dp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+body .chat-content-wrapper #chat-wrapper .chat-section .chat-content .chat-content-data .chat-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+body .chat-content-wrapper #chat-wrapper .chat-section .chat-content .chat-content-data .chat-header .chat-username {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-weight: bold;
+  margin-right: 0.2rem;
+}
+
+body .chat-content-wrapper #chat-wrapper .chat-section .chat-content .chat-content-data .chat-header .chat-time {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #868686;
+}
+
+body .chat-content-wrapper #chat-wrapper .chat-section .chat-content .chat-content-data .chat-content-msg {
+  width: 100%;
 }
 
 body .chat-content-wrapper #chat-input-form {

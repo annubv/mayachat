@@ -85,8 +85,10 @@ $text-settings: (
 input,
 button,
 textarea,
-select {
+select,
+div {
   font-family: sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .transparent-btn {
@@ -98,6 +100,9 @@ select {
 .center-content {
   display: flex;
   align-items: center;
+  &.horizontal {
+    justify-content: center;
+  }
 }
 
 i.active-user {
@@ -105,21 +110,21 @@ i.active-user {
 }
 
 .input-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 7rem;
+  border-top: 1px solid theme-color("foreground", "lighter");
   #chat-input {
     @include text-setting("sm");
-    padding: 0.75rem 7rem 0.75rem 0.7rem;
+    padding: 0.75rem 0.7rem;
     width: 100%;
     min-height: 2rem;
     box-sizing: border-box;
     overflow-y: auto;
     resize: none;
     border: none;
-    border-top: 1px solid theme-color("foreground", "lighter");
   }
   .input-options {
-    margin-left: -6.7rem;
-    padding-top: 0.2rem;
+    padding: 0.2rem;
     width: 6rem;
     display: flex;
     justify-content: flex-end;
@@ -128,10 +133,27 @@ i.active-user {
       @include text-setting("lg");
       margin: 0 0.5rem;
       color: theme-color("foreground", "light");
+
+      &:hover {
+        color: theme-color("accent", "base");
+      }
+
+      &#send-btn {
+        &:hover {
+          color: theme-color("accent", "dark");
+        }
+      }
     }
   }
 }
 
 .send-msg-icon {
   transform: rotate(30deg);
+}
+
+img.profile-pic {
+  width: 2.8rem;
+  height: 2.8rem;
+  object-fit: cover;
+  border-radius: 0.3rem;
 }

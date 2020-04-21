@@ -130,7 +130,6 @@ body {
               color: theme-color("text", "base");
               display: grid;
               grid-template-columns: 1.5rem auto;
-
               i {
                 @include text-setting("xs");
               }
@@ -181,6 +180,7 @@ body {
       }
 
       .profile-options {
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -190,14 +190,66 @@ body {
           @include text-setting("lg");
         }
       }
+
+      .profile-settings {
+        transform: scaleY(0);
+        transform-origin: top;
+        overflow-x: hidden;
+        min-width: 12rem;
+        border-radius: 0.25rem;
+        background-color: theme-color("background", "base");
+        position: fixed;
+        right: 0.3rem;
+        top: 3.5rem;
+        box-shadow: 0px 10px 19px -4px theme-color("foreground", "light");
+        color: theme-color("text", "dark");
+        transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
+
+        .profile-settings-option {
+          cursor: pointer;
+          display: grid;
+          grid-template-columns: 2.8rem auto;
+          padding: 0.5rem;
+          min-width: 3.8rem;
+          transition: background-color 0.3s ease-in;
+          &#profile-settings-header {
+            background-color: theme-color("background", "dark");
+            border-bottom: 1px solid theme-color("foreground", "lighter");
+            &:hover {
+              background-color: theme-color("foreground", "lighter");
+            }
+          }
+          &:hover {
+            background-color: theme-color("foreground", "lighter");
+          }
+
+          i {
+            @include text-setting("lg");
+          }
+
+          p {
+            padding-left: 0.5rem;
+          }
+        }
+      }
+      .profile-settings-active {
+        transform: scaleY(1);
+      }
     }
   }
 
   .chat-content-wrapper {
     position: fixed;
     z-index: -1;
-    height: 93vh;
-    background-color: theme-color("background", "base");
+    width: 100%;
+    height: calc(100% - 10rem);
+    background-color: theme-color("background", "light");
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 4rem;
+
     #chat-id {
       position: fixed;
       top: 3.5rem;
@@ -209,6 +261,56 @@ body {
       border-bottom: 1px solid theme-color("foreground", "lighter");
       @include text-setting("sm");
     }
+
+    #chat-wrapper {
+      overflow-y: scroll;
+      padding: 0 0.75rem;
+      .chat-section {
+        .chat-date {
+          @include text-setting("sm");
+          color: theme-color("text", "dark");
+          font-weight: bold;
+          margin-top: 0.5rem;
+          margin-bottom: 0.3rem;
+          border-bottom: 1px solid theme-color("foreground", "lighter");
+        }
+        .chat-content {
+          @include text-setting("sm");
+          display: grid;
+          grid-template-columns: 3.5rem auto;
+          padding: 0.3rem 0;
+
+          .user-dp {
+            display: flex;
+            justify-content: flex-start;
+            align-items: baseline;
+          }
+
+          .chat-content-data {
+            .chat-header {
+              display: flex;
+              align-items: baseline;
+              .chat-username {
+                width: max-content;
+                font-weight: bold;
+                margin-right: 0.2rem;
+              }
+              .chat-time {
+                @include text-setting("xs");
+                color: theme-color("foreground", "light");
+              }
+            }
+            .chat-content-msg {
+              width: 100%;
+              p {
+                //  display: flex;
+              }
+            }
+          }
+        }
+      }
+    }
+
     #chat-input-form {
       position: fixed;
       bottom: 0;
