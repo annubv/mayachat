@@ -1,0 +1,137 @@
+$theme-colors: (
+  "primary": (
+    "base": #431e44,
+    "light": #522653,
+    "dark": #350d36,
+  ),
+  "accent": (
+    "base": #cd2553,
+    "light": #cfc3cf,
+    "dark": #1164a3,
+    "active": #2bac76,
+  ),
+  "foreground": (
+    "base": #000000,
+    "light": #868686,
+    "dark": #1d1c1d,
+    "lighter": #dfdfdf,
+  ),
+  "background": (
+    "base": #f8f5f5,
+    "light": #ffffff,
+    "dark": #eeeeee,
+  ),
+  "text": (
+    "base": #cfc3cf,
+    "light": #f8f5f5,
+    "dark": #1d1c1d,
+  ),
+);
+
+@function theme-color($key: "foreground", $variant: "dark") {
+  $map: map-get($theme-colors, $key);
+  @return map-get($map, $variant);
+}
+
+$base-font-size: 1rem;
+$base-line-height: 1.25 * $base-font-size;
+
+$text-settings: (
+  "xs": (
+    font-size: 0.75rem,
+    // 12px
+      line-height: $base-line-height,
+  ),
+  "sm": (
+    font-size: 0.875rem,
+    // 14px
+      line-height: $base-line-height,
+  ),
+  "base": (
+    font-size: 1rem,
+    // 16px
+      line-height: $base-line-height,
+  ),
+  "md": (
+    font-size: 1.125rem,
+    // 18px
+      line-height: $base-line-height * 2,
+  ),
+  "lg": (
+    font-size: 1.25rem,
+    // 20px
+      line-height: $base-line-height * 2,
+  ),
+  "xl": (
+    font-size: 1.5rem,
+    // 24px
+      line-height: $base-line-height * 2,
+  ),
+);
+
+@function text-scale($level) {
+  @return map-get(map-get($text-settings, $level), "font-size");
+}
+
+@function line-height($level) {
+  @return map-get(map-get($text-settings, $level), "line-height");
+}
+
+@mixin text-setting($level) {
+  font-size: text-scale($level);
+  line-height: line-height($level);
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: sans-serif;
+}
+
+.transparent-btn {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.center-content {
+  display: flex;
+  align-items: center;
+}
+
+i.active-user {
+  color: theme-color("accent", "active");
+}
+
+.input-wrapper {
+  display: flex;
+  #chat-input {
+    @include text-setting("sm");
+    padding: 0.75rem 7rem 0.75rem 0.7rem;
+    width: 100%;
+    min-height: 2rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    resize: none;
+    border: none;
+    border-top: 1px solid theme-color("foreground", "lighter");
+  }
+  .input-options {
+    margin-left: -6.7rem;
+    padding-top: 0.2rem;
+    width: 6rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    button {
+      @include text-setting("lg");
+      margin: 0 0.5rem;
+      color: theme-color("foreground", "light");
+    }
+  }
+}
+
+.send-msg-icon {
+  transform: rotate(30deg);
+}

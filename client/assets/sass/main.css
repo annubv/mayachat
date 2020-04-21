@@ -10,7 +10,7 @@ body .nav-wrapper {
 body .nav-wrapper nav {
   background-color: #350d36;
   color: #f8f5f5;
-  height: 7vh;
+  height: 3.5rem;
   padding: 0 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24,31 +24,65 @@ body .nav-wrapper nav {
 }
 
 body .nav-wrapper nav .sidebar {
+  z-index: 2;
+  overflow-y: scroll;
   background-color: #431e44;
   width: 80%;
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 80vh;
+  padding-top: 3.5rem;
+  padding-bottom: 14vh;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-}
-
-body .nav-wrapper nav .sidebar-active {
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-box-shadow 0.5s ease-in;
   transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-box-shadow 0.5s ease-in;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), box-shadow 0.5s ease-in;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), box-shadow 0.5s ease-in, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-box-shadow 0.5s ease-in;
+}
+
+body .nav-wrapper nav .sidebar .sidebar-menu .sidebar-menu-header {
+  padding: 0.8rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+body .nav-wrapper nav .sidebar .sidebar-menu .sidebar-menu-header p {
+  color: #f8f5f5;
+  font-weight: bold;
+}
+
+body .nav-wrapper nav .sidebar .sidebar-menu .sidebar-menu-header button {
+  color: #f8f5f5;
+}
+
+body .nav-wrapper nav .sidebar .sidebar-menu .sidebar-submenu li {
+  padding: 0.8rem 1rem;
+  color: #cfc3cf;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5rem auto;
+      grid-template-columns: 1.5rem auto;
+}
+
+body .nav-wrapper nav .sidebar .sidebar-menu .sidebar-submenu li i {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+body .nav-wrapper nav .sidebar .sidebar-menu .sidebar-submenu li.active {
+  background-color: #1164a3;
+}
+
+body .nav-wrapper nav .sidebar-active {
   -webkit-box-shadow: 0 0 10px #1d1c1d;
           box-shadow: 0 0 10px #1d1c1d;
   -webkit-transform: translateX(0%);
@@ -58,7 +92,7 @@ body .nav-wrapper nav .sidebar-active {
 body .nav-wrapper nav .burger {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   cursor: pointer;
-  z-index: 2;
+  z-index: 3;
 }
 
 body .nav-wrapper nav .burger div {
@@ -72,8 +106,8 @@ body .nav-wrapper nav .burger div {
 }
 
 body .nav-wrapper nav .toggle .line1 {
-  -webkit-transform: rotate(-45deg) translate(-5px, 6px);
-          transform: rotate(-45deg) translate(-5px, 6px);
+  -webkit-transform: rotate(45deg) translate(5px, 6px);
+          transform: rotate(45deg) translate(5px, 6px);
 }
 
 body .nav-wrapper nav .toggle .line2 {
@@ -81,8 +115,8 @@ body .nav-wrapper nav .toggle .line2 {
 }
 
 body .nav-wrapper nav .toggle .line3 {
-  -webkit-transform: rotate(45deg) translate(-5px, -6px);
-          transform: rotate(45deg) translate(-5px, -6px);
+  -webkit-transform: rotate(-45deg) translate(5px, -6px);
+          transform: rotate(-45deg) translate(5px, -6px);
 }
 
 body .nav-wrapper nav .nav-header p {
@@ -102,5 +136,38 @@ body .nav-wrapper nav .profile-options {
           align-items: center;
   height: 100%;
   min-width: 25px;
+}
+
+body .nav-wrapper nav .profile-options i {
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+}
+
+body .chat-content-wrapper {
+  position: fixed;
+  z-index: -1;
+  height: 93vh;
+  background-color: #f8f5f5;
+}
+
+body .chat-content-wrapper #chat-id {
+  position: fixed;
+  top: 3.5rem;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5rem auto;
+      grid-template-columns: 1.5rem auto;
+  padding: 0.6rem 1rem;
+  background-color: #eeeeee;
+  border-bottom: 1px solid #dfdfdf;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+body .chat-content-wrapper #chat-input-form {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 /*# sourceMappingURL=main.css.map */

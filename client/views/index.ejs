@@ -16,23 +16,65 @@
   <body>
     <div class="nav-wrapper">
       <nav>
-        <div class="sidebar sidebar-active">
+        <div class="sidebar">
           <div class="sidebar-menu">
             <div class="sidebar-menu-header" id="channels">
               <p>Channels</p>
+              <button class="transparent-btn">
+                <i class="far fa-plus-square"></i>
+              </button>
             </div>
             <ul class="sidebar-submenu" id="channels-list">
-              <li id="cid1">general</li>
-              <li id="cid2">random</li>
+              <li id="cid1">
+                <div class="center-content">
+                  <i class="fas fa-hashtag"></i>
+                </div>
+                <div class="center-content">
+                  <p>general</p>
+                </div>
+              </li>
+              <li id="cid2">
+                <div class="center-content">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <div class="center-content">
+                  <p>random</p>
+                </div>
+              </li>
             </ul>
           </div>
           <div class="sidebar-menu">
             <div class="sidebar-menu-header" id="direct-messages">
               <p>Direct Messages</p>
+              <button class="transparent-btn">
+                <i class="far fa-plus-square"></i>
+              </button>
             </div>
             <ul class="sidebar-submenu" id="channels-list">
-              <li id="pid1">Elon Musk</li>
-              <li id="pid2" class="active">Bill Gates</li>
+              <li id="pid1">
+                <div class="center-content">
+                  <i class="fas fa-circle active-user"></i>
+                </div>
+                <div class="center-content">
+                  <p>Elon Musk</p>
+                </div>
+              </li>
+              <li id="pid2">
+                <div class="center-content">
+                  <i class="far fa-circle"></i>
+                </div>
+                <div class="center-content">
+                  <p>Mike</p>
+                </div>
+              </li>
+              <li id="pid3" class="active">
+                <div class="center-content">
+                  <i class="fas fa-circle active-user"></i>
+                </div>
+                <div class="center-content">
+                  <p>Bill Gates</p>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -47,7 +89,71 @@
         <div class="profile-options">
           <i class="fas fa-ellipsis-v"></i>
         </div>
+       <!--  <div class="profile-seetings">
+          <div class="profile-settings-header">
+            <div class="center-content">
+              <img src="" alt="" />
+            </div>
+            <div class="center-content">
+              <p>Anubhav Singh</p>
+            </div>
+          </div>
+          <div class="profile-settings-option">
+            <div class="center-content">
+              <img src="" alt="" />
+            </div>
+            <div class="center-content">
+              <i class="fas fa-cog"></i>
+            </div>
+          </div>
+          <div class="profile-settings-option">
+            <div class="center-content">
+              <i class="fas fa-cog"></i>
+            </div>
+            <div class="center-content">
+              <p>Do not disturb</p>
+            </div>
+          </div>
+          <div class="profile-settings-option">
+            <div class="center-content">
+              <i class="fas fa-cog"></i>
+            </div>
+            <div class="center-content">
+              <p>Settings</p>
+            </div>
+          </div>
+        </div> -->
       </nav>
     </div>
+    <div class="chat-content-wrapper">
+      <div id="chat-id">
+        <div class="center-content">
+          <i class="fas fa-circle active-user"></i>
+        </div>
+        <div class="center-content">
+          <p>Bill Gates</p>
+        </div>
+      </div>
+      <div id="chat-content"></div>
+      <form id="chat-input-form" class="input-wrapper">
+        <textarea
+          name=""
+          id="chat-input"
+          placeholder="Message Bill Gates"
+        ></textarea>
+        <div class="input-options">
+          <button class="transparent-btn">
+            <i class="fas fa-camera"></i>
+          </button>
+          <button class="transparent-btn">
+            <i class="fas fa-paperclip"></i>
+          </button>
+          <button class="transparent-btn">
+            <i class="fas fa-paper-plane send-msg-icon"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="../js/sidebar.js"></script>
   </body>
 </html>

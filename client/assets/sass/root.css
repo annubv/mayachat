@@ -1,1 +1,73 @@
-/* No CSS *//*# sourceMappingURL=root.css.map */
+input,
+button,
+textarea,
+select {
+  font-family: sans-serif;
+}
+
+.transparent-btn {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.center-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+i.active-user {
+  color: #2bac76;
+}
+
+.input-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.input-wrapper #chat-input {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.75rem 7rem 0.75rem 0.7rem;
+  width: 100%;
+  min-height: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: auto;
+  resize: none;
+  border: none;
+  border-top: 1px solid #dfdfdf;
+}
+
+.input-wrapper .input-options {
+  margin-left: -6.7rem;
+  padding-top: 0.2rem;
+  width: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.input-wrapper .input-options button {
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  margin: 0 0.5rem;
+  color: #868686;
+}
+
+.send-msg-icon {
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+/*# sourceMappingURL=root.css.map */
