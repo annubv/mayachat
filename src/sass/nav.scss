@@ -43,16 +43,22 @@ body {
           }
           .sidebar-submenu {
             li {
+              cursor: pointer;
               padding: 0.8rem 1rem;
               color: theme-color("text", "base");
               display: grid;
               grid-template-columns: 1.5rem auto;
-              i {
-                @include text-setting("xs");
+              transition: background-color 0.2s ease-in;
+              &:hover {
+                background-color: theme-color("primary", "light");
               }
 
               &.active {
                 background-color: theme-color("accent", "dark");
+                color: theme-color("text", "light");
+              }
+              i {
+                @include text-setting("xs");
               }
             }
           }

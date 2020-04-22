@@ -13,7 +13,7 @@ module.exports = {
     "./sass/chat-content.scss",
   ],
   output: {
-    path: path.resolve(__dirname, "client/assets/css/"),
+    path: path.resolve(__dirname, "client/assets/dist/"),
   },
   module: {
     rules: [
