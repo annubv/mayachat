@@ -1,89 +1,6 @@
-$theme-colors: (
-  "primary": (
-    "base": #431e44,
-    "light": #522653,
-    "dark": #350d36,
-  ),
-  "accent": (
-    "base": #cd2553,
-    "light": #cfc3cf,
-    "dark": #1164a3,
-    "active": #2bac76,
-  ),
-  "foreground": (
-    "base": #000000,
-    "light": #868686,
-    "lighter": #dfdfdf,
-    "dark": #1d1c1d,
-  ),
-  "background": (
-    "base": #f8f5f5,
-    "light": #ffffff,
-    "dark": #eeeeee,
-  ),
-  "text": (
-    "base": #cfc3cf,
-    "light": #f8f5f5,
-    "dark": #1d1c1d,
-  ),
-);
-
-@function theme-color($key: "foreground", $variant: "dark") {
-  $map: map-get($theme-colors, $key);
-  @return map-get($map, $variant);
-}
-
-$base-font-size: 1rem;
-$base-line-height: 1.25 * $base-font-size;
-
-$text-settings: (
-  "xs": (
-    font-size: 0.75rem,
-    // 12px
-      line-height: $base-line-height,
-  ),
-  "sm": (
-    font-size: 0.875rem,
-    // 14px
-      line-height: $base-line-height,
-  ),
-  "base": (
-    font-size: 1rem,
-    // 16px
-      line-height: $base-line-height,
-  ),
-  "md": (
-    font-size: 1.125rem,
-    // 18px
-      line-height: $base-line-height * 2,
-  ),
-  "lg": (
-    font-size: 1.25rem,
-    // 20px
-      line-height: $base-line-height * 2,
-  ),
-  "xl": (
-    font-size: 1.5rem,
-    // 24px
-      line-height: $base-line-height * 2,
-  ),
-);
-
-@function text-scale($level) {
-  @return map-get(map-get($text-settings, $level), "font-size");
-}
-
-@function line-height($level) {
-  @return map-get(map-get($text-settings, $level), "line-height");
-}
-
-@mixin text-setting($level) {
-  font-size: text-scale($level);
-  line-height: line-height($level);
-}
+@import "theme.scss";
 
 body {
-  font-family: sans-serif;
   .nav-wrapper {
     position: fixed;
     width: 100%;
@@ -177,6 +94,9 @@ body {
         p {
           @include text-setting("lg");
         }
+        img {
+          height: 1.5rem;
+        }
       }
 
       .profile-options {
@@ -235,86 +155,6 @@ body {
       .profile-settings-active {
         transform: scaleY(1);
       }
-    }
-  }
-
-  .chat-content-wrapper {
-    position: fixed;
-    z-index: -1;
-    width: 100%;
-    height: calc(100% - 10rem);
-    background-color: theme-color("background", "light");
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: fixed;
-    bottom: 4rem;
-
-    #chat-id {
-      position: fixed;
-      top: 3.5rem;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1.5rem auto;
-      padding: 0.6rem 1rem;
-      background-color: theme-color("background", "dark");
-      border-bottom: 1px solid theme-color("foreground", "lighter");
-      @include text-setting("sm");
-    }
-
-    #chat-wrapper {
-      overflow-y: scroll;
-      padding: 0 0.75rem;
-      .chat-section {
-        .chat-date {
-          @include text-setting("sm");
-          color: theme-color("text", "dark");
-          font-weight: bold;
-          margin-top: 0.5rem;
-          margin-bottom: 0.3rem;
-          border-bottom: 1px solid theme-color("foreground", "lighter");
-        }
-        .chat-content {
-          @include text-setting("sm");
-          display: grid;
-          grid-template-columns: 3.5rem auto;
-          padding: 0.3rem 0;
-
-          .user-dp {
-            display: flex;
-            justify-content: flex-start;
-            align-items: baseline;
-          }
-
-          .chat-content-data {
-            .chat-header {
-              display: flex;
-              align-items: baseline;
-              .chat-username {
-                width: max-content;
-                font-weight: bold;
-                margin-right: 0.2rem;
-              }
-              .chat-time {
-                @include text-setting("xs");
-                color: theme-color("foreground", "light");
-              }
-            }
-            .chat-content-msg {
-              width: 100%;
-              p {
-                //  display: flex;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    #chat-input-form {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
     }
   }
 }
