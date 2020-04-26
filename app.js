@@ -27,7 +27,7 @@ app.set("view engine", "ejs");
 app.set("port", process.env.PORT || 5000);
 
 app.listen(app.get("port"), () => {
-  console.log("\nApp Running at " + "http://localhost:" + app.get("port"));
+  console.log("\nApp Running");
 });
 
 module.exports = app;
